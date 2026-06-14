@@ -9,6 +9,53 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let examDisabled = false;
 
+    // Temporizador del examen (1 hora 20 minutos)
+    const EXAM_DURATION = 80 * 60;
+    let timeRemaining = EXAM_DURATION;
+    const timerBar = document.getElementById('timer-bar');
+    const timerDisplay = document.getElementById('timer-display');
+
+    function startTimer() {
+        timerBar.classList.remove('hidden');
+        const interval = setInterval(function () {
+            timeRemaining--;
+            const h = Math.floor(timeRemaining / 3600);
+            const m = Math.floor((timeRemaining % 3600) / 60);
+            const s = timeRemaining % 60;
+            timerDisplay.textContent =
+                String(h).padStart(2, '0') + ':' +
+                String(m).padStart(2, '0') + ':' +
+                String(s).padStart(2, '0');
+            if (timeRemaining <= 300) {
+                timerBar.classList.add('warning');
+            }
+            if (timeRemaining <= 0) {
+                clearInterval(interval);
+                timestampField.value = new Date().toLocaleString('es-MX');
+                form.submit();
+            }
+        }, 1000);
+    }
+
+    // Lógica para revelar examen tras ingresar nombre
+    const btnStart = document.getElementById('btn-start');
+    const sectionMC = document.getElementById('section-mc');
+    const sectionOpen = document.getElementById('section-open');
+    const submitSection = document.querySelector('.submit-section');
+
+    btnStart.addEventListener('click', function () {
+        const nombre = document.getElementById('nombre').value.trim();
+        if (!nombre) {
+            alert('Por favor, escribe tu nombre para continuar.');
+            return;
+        }
+        btnStart.classList.add('hidden');
+        sectionMC.classList.remove('hidden');
+        sectionOpen.classList.remove('hidden');
+        submitSection.classList.remove('hidden');
+        startTimer();
+    });
+
     // Detección de paste en textareas de preguntas abiertas
     textareas.forEach(function (textarea) {
         textarea.addEventListener('paste', function (e) {
@@ -33,11 +80,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function sendPasteNotification() {
         const nombre = document.getElementById('nombre').value || 'No proporcionado';
-        const matricula = document.getElementById('matricula').value || 'No proporcionada';
 
         const data = new FormData();
         data.append('nombre', nombre);
-        data.append('matricula', matricula);
         data.append('paste_detectado', 'SI - INTENTO DE COPIA DETECTADO');
         data.append('timestamp', new Date().toLocaleString('es-MX'));
         data.append('_subject', 'ALERTA: Intento de copia en examen - ' + nombre);
@@ -64,11 +109,10 @@ document.addEventListener('DOMContentLoaded', function () {
         timestampField.value = new Date().toLocaleString('es-MX');
 
         const nombre = document.getElementById('nombre').value.trim();
-        const matricula = document.getElementById('matricula').value.trim();
 
-        if (!nombre || !matricula) {
+        if (!nombre) {
             e.preventDefault();
-            alert('Por favor, completa tu nombre y matrícula antes de enviar.');
+            alert('Por favor, completa tu nombre antes de enviar.');
             return;
         }
 
