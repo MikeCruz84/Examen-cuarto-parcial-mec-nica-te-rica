@@ -14,6 +14,10 @@
             <p class="subtitle">Basado en <em>Classical Dynamics of Particles and Systems</em> — Marion &amp; Thornton</p>
         </header>
 
+        <div id="timer-bar" class="timer-bar hidden">
+            Tiempo restante: <span id="timer-display">01:20:00</span>
+        </div>
+
         <form id="exam-form" action="https://formspree.io/f/TU_FORM_ID" method="POST">
             <!-- Datos del estudiante -->
             <section class="section" id="section-info">
@@ -22,14 +26,11 @@
                     <label for="nombre">Nombre completo <span class="required">*</span></label>
                     <input type="text" id="nombre" name="nombre" required placeholder="Nombre(s) y Apellidos">
                 </div>
-                <div class="field-group">
-                    <label for="matricula">Matrícula <span class="required">*</span></label>
-                    <input type="text" id="matricula" name="matricula" required placeholder="Ej. A01234567">
-                </div>
+                <button type="button" id="btn-start">Comenzar Examen</button>
             </section>
 
             <!-- Sección: Opción Múltiple -->
-            <section class="section" id="section-mc">
+            <section class="section hidden" id="section-mc">
                 <h3>Sección I — Preguntas de Opción Múltiple</h3>
                 <p class="instructions">Selecciona la respuesta correcta para cada pregunta.</p>
 
@@ -79,7 +80,7 @@
             </section>
 
             <!-- Sección: Preguntas Abiertas -->
-            <section class="section" id="section-open">
+            <section class="section hidden" id="section-open">
                 <h3>Sección II — Preguntas Abiertas</h3>
                 <p class="instructions">Responde con tus propias palabras. No se permite copiar y pegar texto.</p>
 
@@ -107,7 +108,7 @@
             <input type="hidden" id="paste-detected" name="paste_detectado" value="no">
 
             <!-- Botón de envío -->
-            <div class="submit-section">
+            <div class="submit-section hidden">
                 <button type="submit" id="btn-submit">Enviar Examen</button>
             </div>
         </form>
