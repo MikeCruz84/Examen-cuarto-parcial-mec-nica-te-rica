@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen - Marcos de Referencia No Inerciales</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Examen Parcial</h1>
+            <h2>Marcos de Referencia No Inerciales</h2>
+            <p class="subtitle">Basado en <em>Classical Dynamics of Particles and Systems</em> — Marion &amp; Thornton</p>
+        </header>
+
+        <form id="exam-form" action="https://formspree.io/f/TU_FORM_ID" method="POST">
+            <!-- Datos del estudiante -->
+            <section class="section" id="section-info">
+                <h3>Datos del estudiante</h3>
+                <div class="field-group">
+                    <label for="nombre">Nombre completo <span class="required">*</span></label>
+                    <input type="text" id="nombre" name="nombre" required placeholder="Nombre(s) y Apellidos">
+                </div>
+                <div class="field-group">
+                    <label for="matricula">Matrícula <span class="required">*</span></label>
+                    <input type="text" id="matricula" name="matricula" required placeholder="Ej. A01234567">
+                </div>
+            </section>
+
+            <!-- Sección: Opción Múltiple -->
+            <section class="section" id="section-mc">
+                <h3>Sección I — Preguntas de Opción Múltiple</h3>
+                <p class="instructions">Selecciona la respuesta correcta para cada pregunta.</p>
+
+                <!-- Pregunta 1 -->
+                <div class="question">
+                    <p class="question-text"><strong>1.</strong> En un marco de referencia no inercial que rota con velocidad angular \(\vec{\omega}\), ¿cuáles de las siguientes son fuerzas ficticias (pseudofuerzas) que aparecen en la ecuación de movimiento?</p>
+                    <div class="options">
+                        <label><input type="radio" name="mc1" value="a" required> a) Centrípeta, gravitacional y de fricción</label>
+                        <label><input type="radio" name="mc1" value="b"> b) De Coriolis, centrífuga y de Euler</label>
+                        <label><input type="radio" name="mc1" value="c"> c) Centrífuga, gravitacional y de Coriolis</label>
+                        <label><input type="radio" name="mc1" value="d"> d) Normal, de Coriolis y centrípeta</label>
+                    </div>
+                </div>
+
+                <!-- Pregunta 2 -->
+                <div class="question">
+                    <p class="question-text"><strong>2.</strong> Una partícula se mueve hacia el norte en el hemisferio norte de la Tierra. La fuerza de Coriolis desvía la partícula hacia:</p>
+                    <div class="options">
+                        <label><input type="radio" name="mc2" value="a" required> a) El este (derecha de su movimiento)</label>
+                        <label><input type="radio" name="mc2" value="b"> b) El oeste (izquierda de su movimiento)</label>
+                        <label><input type="radio" name="mc2" value="c"> c) Hacia arriba (alejándose del centro de la Tierra)</label>
+                        <label><input type="radio" name="mc2" value="d"> d) Hacia el sur (opuesta al movimiento)</label>
+                    </div>
+                </div>
+
+                <!-- Pregunta 3 -->
+                <div class="question">
+                    <p class="question-text"><strong>3.</strong> Sobre la fuerza centrífuga y la fuerza centrípeta, ¿cuál de las siguientes afirmaciones es correcta?</p>
+                    <div class="options">
+                        <label><input type="radio" name="mc3" value="a" required> a) Ambas son fuerzas reales que actúan sobre un cuerpo en movimiento circular</label>
+                        <label><input type="radio" name="mc3" value="b"> b) La fuerza centrípeta es real y apunta hacia el centro; la centrífuga es ficticia y aparece solo en el marco rotante</label>
+                        <label><input type="radio" name="mc3" value="c"> c) La fuerza centrífuga es real y la centrípeta es ficticia</label>
+                        <label><input type="radio" name="mc3" value="d"> d) Son el mismo fenómeno visto desde marcos distintos y ambas son ficticias</label>
+                    </div>
+                </div>
+
+                <!-- Pregunta 4 -->
+                <div class="question">
+                    <p class="question-text"><strong>4.</strong> La relación entre la derivada temporal de un vector \(\vec{A}\) en un marco inercial (fijo) y un marco rotante con velocidad angular \(\vec{\omega}\) es:</p>
+                    <div class="options">
+                        <label><input type="radio" name="mc4" value="a" required> a) \(\left(\frac{d\vec{A}}{dt}\right)_{\text{fijo}} = \left(\frac{d\vec{A}}{dt}\right)_{\text{rot}} + \vec{\omega} \times \vec{A}\)</label>
+                        <label><input type="radio" name="mc4" value="b"> b) \(\left(\frac{d\vec{A}}{dt}\right)_{\text{fijo}} = \left(\frac{d\vec{A}}{dt}\right)_{\text{rot}} - \vec{\omega} \times \vec{A}\)</label>
+                        <label><input type="radio" name="mc4" value="c"> c) \(\left(\frac{d\vec{A}}{dt}\right)_{\text{fijo}} = \left(\frac{d\vec{A}}{dt}\right)_{\text{rot}} + \vec{A} \times \vec{\omega}\)</label>
+                        <label><input type="radio" name="mc4" value="d"> d) \(\left(\frac{d\vec{A}}{dt}\right)_{\text{rot}} = \left(\frac{d\vec{A}}{dt}\right)_{\text{fijo}} + \vec{\omega} \times \vec{A}\)</label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección: Preguntas Abiertas -->
+            <section class="section" id="section-open">
+                <h3>Sección II — Preguntas Abiertas</h3>
+                <p class="instructions">Responde con tus propias palabras. No se permite copiar y pegar texto.</p>
+
+                <!-- Pregunta abierta 1 -->
+                <div class="question">
+                    <p class="question-text"><strong>5.</strong> Partiendo de la segunda ley de Newton en un marco inercial, explica conceptualmente cómo surge la fuerza de Coriolis al transformar la ecuación de movimiento a un marco de referencia rotante. Incluye la expresión matemática relevante y describe su significado físico.</p>
+                    <textarea id="open1" name="open1" rows="8" required placeholder="Escribe tu respuesta aquí..."></textarea>
+                </div>
+
+                <!-- Pregunta abierta 2 -->
+                <div class="question">
+                    <p class="question-text"><strong>6.</strong> Explica cómo la fuerza centrífuga debida a la rotación de la Tierra contribuye al achatamiento terrestre (la Tierra no es una esfera perfecta sino un esferoide oblato). ¿En qué latitud es máximo el efecto y por qué?</p>
+                    <textarea id="open2" name="open2" rows="8" required placeholder="Escribe tu respuesta aquí..."></textarea>
+                </div>
+
+                <!-- Pregunta abierta 3 -->
+                <div class="question">
+                    <p class="question-text"><strong>7.</strong> Describe el funcionamiento del péndulo de Foucault. ¿Cómo demuestra la rotación de la Tierra? Explica por qué el plano de oscilación rota y cómo depende la velocidad de rotación de la latitud del observador.</p>
+                    <textarea id="open3" name="open3" rows="8" required placeholder="Escribe tu respuesta aquí..."></textarea>
+                </div>
+            </section>
+
+            <!-- Campos ocultos -->
+            <input type="hidden" id="timestamp" name="timestamp">
+            <input type="hidden" id="paste-detected" name="paste_detectado" value="no">
+
+            <!-- Botón de envío -->
+            <div class="submit-section">
+                <button type="submit" id="btn-submit">Enviar Examen</button>
+            </div>
+        </form>
+
+        <!-- Modal de alerta por paste -->
+        <div id="modal-overlay" class="modal-overlay hidden">
+            <div class="modal">
+                <div class="modal-icon">&#9888;</div>
+                <h3>Acción No Permitida</h3>
+                <p>Se ha detectado que copiaste y pegaste texto en una de las preguntas abiertas. <strong>Esto no está permitido.</strong></p>
+                <p>De acuerdo con las reglas del curso, <strong>repruebas este parcial</strong> y debes presentar <strong>examen ordinario</strong>.</p>
+                <p class="modal-note">Este intento ha sido registrado.</p>
+                <button id="modal-close">Entendido</button>
+            </div>
+        </div>
+
+        <footer>
+            <p>Examen aplicado de forma remota. Cualquier intento de deshonestidad académica será sancionado conforme al reglamento.</p>
+        </footer>
+    </div>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
